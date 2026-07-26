@@ -140,10 +140,10 @@ struct WheelView: View {
                 .foregroundStyle(Color.white.opacity(0.95))
         )
 
-        // Rotate text to follow wedge angle
+        // Rotate text to read radially, center outward
         var labelContext = context
         labelContext.translateBy(x: labelX, y: labelY)
-        let rotationAngle = midAngle + Double.pi / 2  // make text perpendicular toward center
+        let rotationAngle = midAngle
         labelContext.rotate(by: .radians(rotationAngle))
         labelContext.draw(resolved, in: CGRect(x: -maxWidth / 2, y: -16, width: maxWidth, height: 32))
     }

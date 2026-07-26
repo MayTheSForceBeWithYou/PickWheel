@@ -44,7 +44,7 @@
 		716216941A80262FE7449E9E /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
 		7A448495EC9F6507718307C6 /* WheelContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelContainerView.swift; sourceTree = "<group>"; };
 		7B1C524C9FCD931CB819D491 /* ListPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPickerView.swift; sourceTree = "<group>"; };
-		A0FBE05A30A60A2330E9A100 /* PickWheel.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PickWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FBE05A30A60A2330E9A100 /* PickWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A673F9CC5EF1C0F95D1475C5 /* RemindersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersService.swift; sourceTree = "<group>"; };
 		B54C65C831C33164D87243DE /* ReminderListMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListMappingTests.swift; sourceTree = "<group>"; };
 		F62B19CCC422F90E524B47CB /* RandomSelectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSelectionTests.swift; sourceTree = "<group>"; };
@@ -184,7 +184,6 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					6C4AD8825B5FC22BF0094DBB = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					FBF5492E92196E0CA6FCEDD6 = {
@@ -349,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y34PJWRJ3W;
 				INFOPLIST_FILE = PickWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -366,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y34PJWRJ3W;
 				INFOPLIST_FILE = PickWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B74F70AB02D54478BB18C6D8 /* AppViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C25C162E424385A2ACE627 /* AppViewModelTests.swift */; };
 		36FE924A0D972ECBF2076D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4330919C30159DFC006D390F /* Assets.xcassets */; };
 		1D3AF2B498F71DFAC4E1847A /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7CFA4CB11CC0BA780234FB /* ReminderList.swift */; };
 		5F439791AD70B06E0CCE4F6B /* ResultSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4247A6D81D63CC6EF0B6F7C6 /* ResultSheetView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0C25C162E424385A2ACE627 /* AppViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelTests.swift; sourceTree = "<group>"; };
 		057E9428A264293623E61932 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		09C51B12A7B03F2EF0970F96 /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		30B43A3DB8B2CA5EAE7B941D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				F62B19CCC422F90E524B47CB /* RandomSelectionTests.swift */,
 				B54C65C831C33164D87243DE /* ReminderListMappingTests.swift */,
+				C0C25C162E424385A2ACE627 /* AppViewModelTests.swift */,
 			);
 			path = PickWheelTests;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				B49A02E82B9D3858E70F3434 /* RandomSelectionTests.swift in Sources */,
 				9EBF6829A392B524A85D7F54 /* ReminderListMappingTests.swift in Sources */,
+				B74F70AB02D54478BB18C6D8 /* AppViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

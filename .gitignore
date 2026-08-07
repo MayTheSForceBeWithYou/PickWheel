@@ -12,5 +12,8 @@ xcuserdata/
 *.dSYM
 
 ## Xcode
+build/
 DerivedData/
+*.o
+*.dSYM
 *.xcuserstate

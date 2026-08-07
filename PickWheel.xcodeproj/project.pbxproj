@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36FE924A0D972ECBF2076D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4330919C30159DFC006D390F /* Assets.xcassets */; };
 		1D3AF2B498F71DFAC4E1847A /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7CFA4CB11CC0BA780234FB /* ReminderList.swift */; };
 		5F439791AD70B06E0CCE4F6B /* ResultSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4247A6D81D63CC6EF0B6F7C6 /* ResultSheetView.swift */; };
 		7CA7EB2B223E5678DA745779 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C51B12A7B03F2EF0970F96 /* WheelView.swift */; };
@@ -38,9 +39,10 @@
 		30B43A3DB8B2CA5EAE7B941D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34615C42E65641F4F3F0E94A /* AccessDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessDeniedView.swift; sourceTree = "<group>"; };
 		4247A6D81D63CC6EF0B6F7C6 /* ResultSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSheetView.swift; sourceTree = "<group>"; };
+		4330919C30159DFC006D390F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PickWheel/Assets.xcassets; sourceTree = "<group>"; };
 		4E7CFA4CB11CC0BA780234FB /* ReminderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
 		507842F66B3B94A6E67D3AAE /* PickWheelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWheelApp.swift; sourceTree = "<group>"; };
-		68DCA6B95CE4FD6D5B7F010F /* PickWheelTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PickWheelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DCA6B95CE4FD6D5B7F010F /* PickWheelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickWheelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		716216941A80262FE7449E9E /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
 		7A448495EC9F6507718307C6 /* WheelContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelContainerView.swift; sourceTree = "<group>"; };
 		7B1C524C9FCD931CB819D491 /* ListPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPickerView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		B0C384F29885CD4FCEDD1F92 = {
 			isa = PBXGroup;
 			children = (
+				4330919C30159DFC006D390F /* Assets.xcassets */,
 				507842F66B3B94A6E67D3AAE /* PickWheelApp.swift */,
 				D6F6C51B5FF6044C4AE2DCCB /* Sources */,
 				F7155D0816E1FAC0F40A3B81 /* Tests */,
@@ -144,6 +147,7 @@
 			buildConfigurationList = 6921B8D5C222B479B5C8C497 /* Build configuration list for PBXNativeTarget "PickWheel" */;
 			buildPhases = (
 				CB3E276565F874DDB6C6A43B /* Sources */,
+				8E144EEAECB63FC0C66D8498 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -181,7 +185,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					6C4AD8825B5FC22BF0094DBB = {
 						ProvisioningStyle = Automatic;
@@ -211,6 +215,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E144EEAECB63FC0C66D8498 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36FE924A0D972ECBF2076D4C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		463F61B5FF82FC9E7AA6E50C /* Sources */ = {
@@ -290,6 +305,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -418,6 +434,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;

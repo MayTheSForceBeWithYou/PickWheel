@@ -68,11 +68,20 @@ struct WheelView: View {
         let wedgeAngle = 360.0 / Double(items.count)
         // Centre of the winning wedge (measured from top = 0, clockwise)
         let wedgeCenter = wedgeAngle * Double(index) + wedgeAngle / 2
-        // We want the wheel to rotate so that wedgeCenter lands under the pointer (top).
-        // The wheel starts with wedge 0 at top; rotate so winner ends at top.
+        let jitter = Double.random(in: -(wedgeAngle * 0.35)...(wedgeAngle * 0.35))
+        // Absolute rotation (mod 360) needed so wedgeCenter lands under the pointer (top).
+        let requiredMod = (360.0 - wedgeCenter + jitter).truncatingRemainder(dividingBy: 360.0)
+
+        // The wheel may already be resting mid-rotation from a previous spin, so rotate
+        // forward by however much is needed from the CURRENT angle to reach requiredMod,
+        // rather than assuming the wheel starts at 0°.
+        let currentMod = rotationDegrees.truncatingRemainder(dividingBy: 360.0)
+        var delta = requiredMod - currentMod
+        delta = delta.truncatingRemainder(dividingBy: 360.0)
+        if delta < 0 { delta += 360.0 }
+
         let fullRotations = Double(Int.random(in: 5...8)) * 360.0
-        let landingOffset = 360.0 - wedgeCenter + Double.random(in: -(wedgeAngle * 0.35)...(wedgeAngle * 0.35))
-        targetDegrees = rotationDegrees + fullRotations + landingOffset
+        targetDegrees = rotationDegrees + fullRotations + delta
 
         withAnimation(.timingCurve(0.2, 0.8, 0.3, 1.0, duration: 4.0)) {
             rotationDegrees = targetDegrees

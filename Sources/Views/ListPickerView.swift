@@ -21,14 +21,18 @@ struct ListPickerView: View {
                                 Circle()
                                     .fill(Color(cgColor: list.color ?? CGColor(gray: 0.5, alpha: 1)))
                                     .frame(width: 12, height: 12)
+                                    .accessibilityHidden(true)
                                 Text(list.title)
                                     .foregroundStyle(.primary)
                                 Spacer()
                                 Image(systemName: "chevron.right")
                                     .foregroundStyle(.tertiary)
                                     .font(.caption)
+                                    .accessibilityHidden(true)
                             }
                         }
+                        .accessibilityLabel(list.title)
+                        .accessibilityHint("Opens this list's reminders and lets you spin the wheel.")
                     }
                     .listStyle(.insetGrouped)
                 }

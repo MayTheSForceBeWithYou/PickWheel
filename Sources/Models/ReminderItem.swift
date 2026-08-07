@@ -8,7 +8,8 @@ struct ReminderItem: Identifiable, Hashable, @unchecked Sendable {
 
     init(reminder: EKReminder) {
         self.id = reminder.calendarItemIdentifier
-        self.title = reminder.title ?? "Untitled"
+        let rawTitle = reminder.title ?? ""
+        self.title = rawTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Untitled" : rawTitle
         self.ekReminder = reminder
     }
 

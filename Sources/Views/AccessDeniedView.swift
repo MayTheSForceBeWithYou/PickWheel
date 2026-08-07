@@ -8,6 +8,7 @@ struct AccessDeniedView: View {
             Image(systemName: "lock.slash")
                 .font(.system(size: 60))
                 .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
 
             VStack(spacing: 8) {
                 Text("Reminders Access Needed")
@@ -25,6 +26,7 @@ struct AccessDeniedView: View {
                     .background(.tint, in: RoundedRectangle(cornerRadius: 12))
                     .foregroundStyle(.white)
             }
+            .accessibilityHint("Opens the Settings app so you can allow PickWheel to access Reminders.")
         }
         .padding(32)
     }

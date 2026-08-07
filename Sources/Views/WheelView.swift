@@ -45,15 +45,31 @@ struct WheelView: View {
                 // Pointer at 12-o'clock
                 PointerView()
                     .position(x: center.x, y: center.y - size / 2 + 2)
+                    .accessibilityHidden(true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .aspectRatio(1, contentMode: .fit)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Reminder wheel")
+        .accessibilityValue(wheelAccessibilityValue)
         .onChange(of: isSpinning) { _, nowSpinning in
             if nowSpinning && !previousIsSpinning {
                 triggerSpin()
             }
             previousIsSpinning = nowSpinning
+        }
+    }
+
+    // MARK: - Accessibility
+
+    private var wheelAccessibilityValue: String {
+        if isSpinning {
+            return "Spinning through \(items.count) reminders"
+        } else if let selectedItem {
+            return "Landed on \(selectedItem.title)"
+        } else {
+            return "Showing \(items.count) reminders: " + items.map(\.title).joined(separator: ", ")
         }
     }
 
@@ -89,6 +105,7 @@ struct WheelView: View {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             impactLand.impactOccurred()
+            UIAccessibility.post(notification: .announcement, argument: "Landed on \(winner.title)")
             onSpinFinished()
         }
     }

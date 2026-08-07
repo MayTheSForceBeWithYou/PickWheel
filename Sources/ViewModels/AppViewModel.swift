@@ -27,6 +27,7 @@ final class AppViewModel {
     var reminders: [ReminderItem] = []
     var isLoadingReminders = false
     var remindersError: String? = nil
+    var markCompleteError: String? = nil
 
     // MARK: - Spin state
     var isSpinning = false
@@ -117,14 +118,15 @@ final class AppViewModel {
 
     func markComplete() {
         guard let item = selectedReminder else { return }
+        markCompleteError = nil
         do {
             try service.markComplete(item)
             reminders.removeAll { $0.id == item.id }
+            showResult = false
+            selectedReminder = nil
         } catch {
-            // Silently fail for now; could surface an alert
+            markCompleteError = error.localizedDescription
         }
-        showResult = false
-        selectedReminder = nil
     }
 
     func spinAgain() {

@@ -40,6 +40,7 @@ struct WheelContainerView: View {
                                 .foregroundStyle(.white)
                         }
                         .disabled(vm.isSpinning)
+                        .accessibilityHint("Randomly picks one reminder from the wheel.")
                         .padding(.horizontal, 32)
                         .padding(.bottom, 40)
                     }
@@ -54,6 +55,7 @@ struct WheelContainerView: View {
                     } label: {
                         Label("Lists", systemImage: "list.bullet")
                     }
+                    .accessibilityHint("Returns to the list picker.")
                 }
             }
             .sheet(isPresented: Binding(
@@ -67,6 +69,19 @@ struct WheelContainerView: View {
                         onSpinAgain: { vm.spinAgain() }
                     )
                     .presentationDetents([.medium])
+                    .alert(
+                        "Couldn't Mark Complete",
+                        isPresented: Binding(
+                            get: { vm.markCompleteError != nil },
+                            set: { isPresented in
+                                if !isPresented { vm.markCompleteError = nil }
+                            }
+                        )
+                    ) {
+                        Button("OK", role: .cancel) {}
+                    } message: {
+                        Text(vm.markCompleteError ?? "")
+                    }
                 }
             }
         }

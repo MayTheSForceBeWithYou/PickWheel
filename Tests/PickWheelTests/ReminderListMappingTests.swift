@@ -35,16 +35,23 @@ final class ReminderListMappingTests: XCTestCase {
         XCTAssertEqual(item.title, "Buy groceries")
     }
 
-    func testReminderItemTitlePreservesEmptyString() {
-        // Unlike a nil title, EventKit represents an explicitly empty title
-        // as "" rather than nil, so the `?? "Untitled"` fallback in
-        // ReminderItem.init never actually triggers for this case. This
-        // documents the current (surprising) behavior — see code review notes.
+    func testReminderItemTitleFallsBackToUntitledForExplicitEmptyString() {
+        // EventKit represents both a nil title and an explicitly empty title
+        // as "" on read, so ReminderItem must treat blank titles as
+        // "Untitled" regardless of whether the underlying value was nil or "".
         let store = EKEventStore()
         let r = EKReminder(eventStore: store)
         r.title = ""
         let item = ReminderItem(reminder: r)
-        XCTAssertEqual(item.title, "")
+        XCTAssertEqual(item.title, "Untitled")
+    }
+
+    func testReminderItemTitleFallsBackToUntitledForWhitespaceOnlyString() {
+        let store = EKEventStore()
+        let r = EKReminder(eventStore: store)
+        r.title = "   "
+        let item = ReminderItem(reminder: r)
+        XCTAssertEqual(item.title, "Untitled")
     }
 
     func testReminderItemsWithSameIdentifierDedupeInASet() {

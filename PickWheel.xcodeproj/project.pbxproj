@@ -340,7 +340,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pickwheel.PickWheelTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sforce.PickWheelTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickWheel.app/PickWheel";
@@ -358,7 +358,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pickwheel.PickWheelTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sforce.PickWheelTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickWheel.app/PickWheel";
@@ -377,7 +377,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pickwheel.PickWheel;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sforce.PickWheel;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -395,7 +395,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pickwheel.PickWheel;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sforce.PickWheel;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
